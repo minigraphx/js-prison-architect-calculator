@@ -14,3 +14,15 @@ body { padding-top: 70px; }
 table tr td.vertical-center {
     vertical-align: middle;
 }
+
+.PAObject {
+    border: 1px solid black;
+    width:  16px;
+    height: 16px;
+}
+
+.grid-cell {
+    border: 1px solid lightgrey;
+    width:  15px;
+    height: 15px;
+}

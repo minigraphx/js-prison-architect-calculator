@@ -1,0 +1,119 @@
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title>Prison Architect Calculator</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/pac.css"/>
+    
+    
+        <script lang="javascript" src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
+        <script lang="javascript" src="js/cell.js"></script>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    </head>
+<body>
+<h1 class="page-header">Cell calculator <small>for pa</small></h1>
+<p>
+<a href="pac.html"> amuttsch's calculator for cell grading, kitchen/canteen and laundry/cleaning</a>
+</p>
+
+<div class="PAObject"></div>
+<div class="col-sm-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Cell
+        </div>
+        <div class="panel-body">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label>width:</label>
+                    <input type="text" placeholder="cell width">
+                </div>
+                <div class="row"></div>
+                <div class="form-group">
+                    <label>height:</label>
+                    <input type="text" placeholder="cell height">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="col-sm-3">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            Cell Row / Column
+        </div>
+        <div class="panel-body">
+            <form class="form-inline">
+                <div class="form-group">
+                    <label>Cell Rows:</label>
+                    <input type="text" placeholder="cell rows">
+                </div>
+                <div class="row"></div>
+                <div class="form-group">
+                    <label>Cell Columns:</label>
+                    <input type="text" placeholder="cell columns">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<input type="text" placeholder="number of cells">
+= cell row or column
+
+output:
+
+width:<br>
+length:<br>
+foundation area:<br>
+estimated cost:<br>
+
+
+<pre>
+needed for version 1:
+(2 rows/columns need 1 corridor    rows-1 = horizontal corridors   columns - 1 = vertical corridors)
+
+number cell rows:
+number cell columns:
+(vertical corridors = columns -1)
+
+=cell block
+
+corridor width vertical: (min 0) 
+corridor width horizontal: (min 0)
+
+number cell blocks
+
+
+at least 1 corridor with width 1
+</pre>
+
+<pre>
+planned:
+cell details:
+jail door
+large door
+solitary door
+wall type
+
+guard per corridor:
+additional guards:
+
+window
+large window
+tv 
+shower + drain
+phone
+</pre>
+
+<pre>
+cell template
+
+</pre>
+
+</body>
+</html>
