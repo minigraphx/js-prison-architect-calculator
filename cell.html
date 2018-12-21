@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
     <head lang="en">
         <meta charset="UTF-8">
@@ -13,107 +14,232 @@
     
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     </head>
-<body>
-<h1 class="page-header">Cell calculator <small>for pa</small></h1>
-<p>
-<a href="pac.html"> amuttsch's calculator for cell grading, kitchen/canteen and laundry/cleaning</a>
-</p>
+    <body class="container">
+        <h1 class="page-header">Cell calculator <small>for pa</small></h1>
+        <p>
+            <a href="pac.html"> amuttsch's calculator for cell grading, kitchen/canteen and laundry/cleaning</a>
+        </p>
 
-<div class="PAObject"></div>
-<div class="col-sm-3">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Cell
-        </div>
-        <div class="panel-body">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label>width:</label>
-                    <input type="text" placeholder="cell width">
+        <div class="PAObject"></div>
+        <div class="PAObject PA-wall-brick"></div>
+        <div class="clearfix"></div>
+
+        <!-- Cell Defintion -->
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Cell
                 </div>
-                <div class="row"></div>
-                <div class="form-group">
-                    <label>height:</label>
-                    <input type="text" placeholder="cell height">
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-8 col-md-9 control-label">Cell width (m):</label>
+                            <div class="col-sm-4 col-md-3">
+                                <input type="text" id="cell-width" class="form-control cell-calc" placeholder="2" value="2">
+                            </div>
+                        </div>
+                        <div class="row"></div>
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label">Cell height (m):</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="cell-height" class="form-control cell-calc" placeholder="3" value="3">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+            </div>
         </div>
-    </div>
-</div>
 
-<div class="col-sm-3">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-            Cell Row / Column
-        </div>
-        <div class="panel-body">
-            <form class="form-inline">
-                <div class="form-group">
-                    <label>Cell Rows:</label>
-                    <input type="text" placeholder="cell rows">
+        <!-- Block Definition -->
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="panel-title">Cell Block</div>
                 </div>
-                <div class="row"></div>
-                <div class="form-group">
-                    <label>Cell Columns:</label>
-                    <input type="text" placeholder="cell columns">
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label">Cell Columns:</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="cells-per-column" class="form-control cell-calc" 
+                                placeholder="2" value="5" data-toggle="tooltip" 
+                                title="Number of Cells besides each other before a corridor appears" >
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label">Cell Rows:</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="cells-per-row" class="form-control cell-calc" 
+                                placeholder="1" value="2" data-toggle="tooltip"
+                                title="Number of cells below each other before a corridor appears">
+                            </div>
+                        </div>
+                    </form>
                 </div>
-            </form>
+                <div class="panel-footer">
+                    <small>- to remain accessible, <br>one must be set to 2 (auto)</small>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
+    
+        <!-- Number of Cell Blocks -->
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Cell Blocks
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label">Cells Blocks per Row:</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="blocksPerRow" class="form-control cell-calc" placeholder="1" value="1">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label">Cells Blocks per Column:</label>
+                            <div class="col-sm-3">
+                                <input type="text" id="blocksPerColumn" class="form-control cell-calc" placeholder="1" value="1">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 text-center">- OR -</div>
+                        <form class="form-horizontal">
+                            <div class="form-group">
+                                <label class="col-sm-9 control-label">horizontal corridors:</label>
+                                <div class="col-sm-3">
+                                    <input type="text" id="corridor-horizontal" class="form-control cell-calc" placeholder="1" value="1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-9 control-label">horizontal corridors width:</label>
+                                <div class="col-sm-3">
+                                    <input type="text" id="corridor-horizontal-width" class="form-control cell-calc" placeholder="1" value="1">
+                                </div>
+                            </div>    
+                            <div class="form-group">
+                                <label class="col-sm-9 control-label">vertical corridors:</label>
+                                <div class="col-sm-3">
+                                    <input type="text" id="corridor-vertical" class="form-control cell-calc" placeholder="1" value="1">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-9 control-label">vertical corridors width:</label>
+                                <div class="col-sm-3">
+                                    <input type="text" id="corridor-vertical-width" class="form-control cell-calc" placeholder="1" value="1">
+                                </div>
+                            </div>    
+                        </form>
+                        <!--
+                        <div class="form-group">
+                            <label class="col-sm-9 control-label">jail blocks:</label>
+                            <div class="col-sm-3">
+                                <input type="text" class="form-control cell-calc" placeholder="1" value="1">
+                            </div>
+                        </div>
+                        -->
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<input type="text" placeholder="number of cells">
-= cell row or column
+        <!-- result calculation -->
+        <div class="col-sm-3">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Calculation
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal text-left">
+                    <label class="col-sm-12 control-label">Foundation Area</label>
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">width:</label>
+                        <div id="foundation-width" class="col-sm-6">-</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">height:</label>
+                        <div id="foundation-height" class="col-sm-6">-</div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-6 control-label">Est. Cost:</label>
+                        <div class="col-sm-6">-</div>
+                    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
-output:
-
-width:<br>
-length:<br>
-foundation area:<br>
-estimated cost:<br>
-
-
-<pre>
-needed for version 1:
-(2 rows/columns need 1 corridor    rows-1 = horizontal corridors   columns - 1 = vertical corridors)
-
-number cell rows:
-number cell columns:
-(vertical corridors = columns -1)
-
-=cell block
-
-corridor width vertical: (min 0) 
-corridor width horizontal: (min 0)
-
-number cell blocks
+        <div class="col-sm-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Preview
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                    </form>
+                </div>
+            </div>
+        </div>
 
 
-at least 1 corridor with width 1
-</pre>
+        <div class="col-sm-3" style="display: none">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    Template
+                </div>
+                <div class="panel-body">
+                    <form class="form-horizontal">
+                    </form>
+                </div>
+            </div>
+        </div>
 
-<pre>
-planned:
-cell details:
-jail door
-large door
-solitary door
-wall type
+        <br>
+        <div class="row"></div>
 
-guard per corridor:
-additional guards:
 
-window
-large window
-tv 
-shower + drain
-phone
-</pre>
+        <pre class="col-sm-6">
+        needed for version 1:
+        2 rows/columns need 1 corridor    
+        block rows - 1 = horizontal corridors   
+        block columns - 1 = vertical corridors
 
-<pre>
-cell template
+        if rows or cols is set to 1 cells per column and row are the same
 
-</pre>
+        corridor width vertical: (min 0) 
+        corridor width horizontal: (min 0)
 
-</body>
+        at least 1 corridor with width 1
+        </pre>
+
+        <pre class="col-sm-6">
+        planned:
+        cell details
+        jail door
+        large door
+        solitary door
+        wall type
+
+        guards per corridor
+        stationed guards
+
+        (bed, toilet)
+
+        shower + drain
+        window
+        large window
+        tv 
+        radio
+        phone
+        prayer mat
+        desk
+        chair/sofa
+        bookshelf
+
+        set width per corridor
+        (maybe create different sized cell blocks too)
+        cell template
+        preview
+        </pre>
+
+    </body>
 </html>
